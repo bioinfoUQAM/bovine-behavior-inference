@@ -230,7 +230,7 @@ What was verified when the repository was assembled:
   unless `--overwrite` is given. The `ddt …` columns of the trajectories are raw pixel
   derivatives kept for inspection only; the model recomputes its own derivatives.
 * **Step 08.** With `--preset exp1/exp2/exp3`, the script reproduces the out-of-fold
-  predictions of the thesis runs (fold 0 of each experiment, and the full Exp3 run: max.
+  predictions of the thesis runs (full Exp1 run at k = 14, full Exp3 run, fold 0 of Exp2: max.
   difference < 3·10⁻⁷; NLL and F1 identical to 6 decimals; a few per-behaviour AUCs move by
   up to 0.007 because many predicted probabilities are tied and such tiny numerical
   differences, e.g. across library versions, change the tie order).
