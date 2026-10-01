@@ -235,41 +235,6 @@ What was verified when the repository was assembled:
   up to 0.007 because many predicted probabilities are tied and such tiny numerical
   differences, e.g. across library versions, change the tie order).
 
-Points worth knowing when reading the thesis results:
-
-1. **Exp1 and Exp2/Exp3 were run with different settings.** Exp1 used a *global*
-   standardisation of the features and no class re-weighting; Exp2 and Exp3 used a
-   *per-sequence* standardisation (thesis 4.4.2), `class_weight="balanced"` for behaviours
-   with a prevalence < 15 %, and k fixed to 14. The presets encode these settings. Run on the
-   five sequences, the Exp2/Exp3 settings give a macro AUC of 0.351
-   (`exp1_with_exp2_settings`) instead of 0.469, so part of the Exp1 → Exp2 difference comes
-   from the settings, not only from excluding Mack.
-2. **Behaviours constant in the training folds.** When a behaviour has a single value in the
-   training sequences, the original code used a constant classifier that always predicted 0,
-   even when the constant value was 1. In Exp2 (test fold Maisie) and Exp3, *Standing* is
-   always 1 in the training folds, so it is predicted 0 everywhere (thesis 5.4.2: "le modèle
-   prédit Standing = 0.000"), which dominates the NLL of these runs. The presets keep this
-   behaviour to reproduce the thesis; without a preset, the default
-   (`--constant_label_fix true`) predicts the constant value instead.
-3. **Hyper-parameters.** LOOCV models use 1 initialisation and 50 EM iterations; the final
-   (BIC) model uses 5 initialisations and 200 iterations. Exp1 searched k in {8, …, 16} by
-   LOOCV and {10, …, 18} by BIC.
-4. **Global vs per-sequence metrics.** Global metrics are computed on the median-smoothed
-   (window 7) out-of-fold probabilities with a 0.5 threshold; per-sequence metrics use the raw
-   probabilities and the F1-optimal thresholds of the training folds. Global macro AUC values
-   below 0.5 come from pooling sequences whose probabilities are on different scales; the
-   per-sequence AUCs are above 0.5.
-5. **Registration.** With the grid resolution used (Nr = 7) the best transform is the same
-   for the five sequences — a horizontal scaling sx = 0.833, all other parameters at their
-   identity value (`data/07_registered/registration_params.csv`).
-6. **Annotation statistics.** The original statistics script treated every column after
-   `Defecation` as a behaviour (including box features on the scaled files); step 10 only
-   counts the 17 behaviours and reproduces Table 3.3 (134 occurrences, 1.25 h).
-7. **Frame indexing.** Frames are 1-based everywhere (frame 1 = first image of the video).
-8. **Filtered trajectories.** `data/05_trajectories/filtered/` and
-   `scripts/optional/interpolate_filter.py` (interpolation + Butterworth low-pass filter)
-   belong to an earlier version of the pipeline and are not used for the thesis results.
-
 ---
 
 ## Citation
