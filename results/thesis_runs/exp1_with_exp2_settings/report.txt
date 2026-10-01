@@ -1,0 +1,64 @@
+GMMHMM multi-label evaluation – LOOCV (Leave-One-Out Cross-Validation)
+  Total frames : 110209 | sequences : 5
+  Features used: 63 (21 base, 21 ddt1, 21 ddt2)
+  Best N_STATES (LOOCV AUC): 14
+  Best N_STATES (BIC final) : 20
+  N_MIX (GMMHMM): 2
+
+── Global metrics (LOOCV out-of-fold predictions) ──
+  Global mean NLL : 0.2380
+  Global macro AUC: 0.3514
+  Global F1 micro : 0.7039
+  Global F1 macro : 0.1152
+
+── Per-sequence summary ──
+ seq_id                                                                                seq_name  frames  mean_nll  macro_auc  f1_micro  f1_macro
+      0 Fa2023EnvEnr_EmoANT_IN_20SEP2023_IW5_8075Haagendaz_interp_clipped_frames_scaled_reg.csv   23394  0.129987   0.554098  0.765998  0.179729
+      1       Fa2023EnvEnr_EmoANT_IN_20230919_IP3_8076Mack_interp_clipped_frames_scaled_reg.csv   23760  0.576146   0.460649  0.276605  0.070930
+      2    Fa2023EnvEnr_EmoANT_IN_20230919_IP4_8089Babelle_interp_clipped_frames_scaled_reg.csv   23737  0.149307   0.507443  0.761425  0.166431
+      3    Fa2023EnvEnr_EmoANT_IN_26SEP2023_IW6_8145Maisie_interp_clipped_frames_scaled_reg.csv   17643  0.176116   0.635218  0.786291  0.150787
+      4   Fa2023EnvEnr_EmoANT_IN_21SEP2023_IW2_8554Versace_interp_clipped_frames_scaled_reg.csv   21675  0.133444   0.449869  0.616173  0.108780
+
+── Per-sequence top-5 hardest behaviours (by mean NLL) ──
+
+=== Fa2023EnvEnr_EmoANT_IN_20SEP2023_IW5_8075Haagendaz_interp_clipped_frames_scaled_reg.csv ===
+         behaviour  prevalence  mean_pred  mean_nll      auc
+            Eating    0.796572   0.423539  0.848599 0.545391
+       Exploration    0.057835   0.032056  0.222224 0.631265
+Social Interaction    0.033256   0.042939  0.147366 0.654341
+          Drinking    0.028896   0.029374  0.138455 0.494393
+          Grooming    0.026075   0.021165  0.125061 0.346757
+
+=== Fa2023EnvEnr_EmoANT_IN_20230919_IP3_8076Mack_interp_clipped_frames_scaled_reg.csv ===
+  behaviour  prevalence  mean_pred  mean_nll      auc
+      Lying    0.524032   0.010334  2.872498 0.547728
+   Standing    0.473569   0.983084  2.379746 0.526543
+     Eating    0.102946   0.637896  0.957947 0.490550
+   Drinking    0.080640   0.020563  0.341775 0.494962
+Exploration    0.027020   0.045970  0.128628 0.593064
+
+=== Fa2023EnvEnr_EmoANT_IN_20230919_IP4_8089Babelle_interp_clipped_frames_scaled_reg.csv ===
+         behaviour  prevalence  mean_pred  mean_nll      auc
+            Eating    0.832161   0.447356  0.765613 0.552874
+          Standing    1.000000   0.806041  0.236037      NaN
+             Lying    0.000000   0.188084  0.228286      NaN
+Social Interaction    0.029490   0.076161  0.175744 0.463828
+       Exploration    0.035304   0.038924  0.157077 0.438731
+
+=== Fa2023EnvEnr_EmoANT_IN_26SEP2023_IW6_8145Maisie_interp_clipped_frames_scaled_reg.csv ===
+         behaviour  prevalence  mean_pred  mean_nll      auc
+            Eating    0.622456   0.612424  0.496244 0.895694
+          Standing    0.931418   0.943503  0.365735 0.641693
+             Lying    0.056396   0.057561  0.341670 0.515245
+Social Interaction    0.057360   0.014184  0.246659 0.803420
+        Lying Down    0.014680   0.000000  0.202813 0.500000
+
+=== Fa2023EnvEnr_EmoANT_IN_21SEP2023_IW2_8554Versace_interp_clipped_frames_scaled_reg.csv ===
+  behaviour  prevalence  mean_pred  mean_nll      auc
+     Eating    0.299423   0.467108  0.678392 0.570005
+   Standing    1.000000   0.765762  0.302091      NaN
+      Lying    0.000000   0.228958  0.295830      NaN
+Exploration    0.026943   0.038386  0.128632 0.273005
+   Grooming    0.022745   0.022308  0.112339 0.506596
+
+Total runtime (s): 56270.896

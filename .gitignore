@@ -1,0 +1,25 @@
+# videos (too large for GitHub, see data/videos/README.md)
+data/videos/*
+!data/videos/README.md
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# regenerated intermediate data
+data/04_roi/
+data/05_trajectories_rebuilt/
+
+# large / binary model outputs
+results/**/frames_with_probabilities.csv
+results/**/final_model.pkl
+results/qc_videos/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db

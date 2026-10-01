@@ -1,0 +1,19 @@
+Behaviour,Cumulative_duration_h,Percent_total_time,Occurrences
+Standing,1.1160,89.2794,5
+Eating,0.5814,46.5126,24
+Other (including inactive),0.4096,32.7691,35
+Lying,0.1315,10.5191,2
+Social Interaction,0.0866,6.9273,9
+Drinking,0.0559,4.4725,6
+Exploration,0.0424,3.3911,13
+Grooming,0.0292,2.3377,18
+Defecation,0.0129,1.0326,3
+Urination,0.0105,0.8400,2
+Vigilance toward the door,0.0077,0.6148,4
+Not Visible,0.0043,0.3430,4
+Scratching,0.0033,0.2652,3
+Head Shaking (as if to detach),0.0026,0.2081,2
+Kneeling,0.0025,0.2015,2
+Lying Down,0.0024,0.1919,1
+Standing Up,0.0012,0.0941,1
+Total (corpus duration),1.2500,100.0000,134
